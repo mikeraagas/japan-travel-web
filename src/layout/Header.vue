@@ -1,7 +1,7 @@
 <template>
   <a-layout-header class="layout-header">
     <div class="logo">
-      Biz Weather
+      Japan Travel
     </div>
   </a-layout-header>
 </template>

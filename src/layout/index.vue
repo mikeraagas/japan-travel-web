@@ -30,6 +30,10 @@ export default {
 </script>
 
 <style lang="scss">
+html, body {
+  background-color: #f0f2f5 !important;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -37,8 +41,6 @@ export default {
 }
 
 .layout {
-  height: 100vh;
-
   .content-wrapper {
     padding: 25px;
 

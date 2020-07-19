@@ -1,89 +1,37 @@
 <template>
   <div class="page-home">
-    
-    <!-- START: Autocomplete Form -->
-    <div class="loc-autocomplete">
-      <a-auto-complete
-        size="large"
-        placeholder="Search for location"
-        option-label-prop="value"
-        @select="onSelect"
-        @search="onSearch">
-
-        <template slot="dataSource">
-          <a-select-option value="current">
-            <a-icon type="environment" />
-            Use current location
-          </a-select-option>
-
-          <a-select-option v-for="loc in dataSource" :key="loc.address" :value="loc.address">
-            {{ loc.address }}
-          </a-select-option>
-        </template>
-
-        <a-input>
-          <a-icon slot="prefix" type="search" />
-          <a-button
-            slot="suffix"
-            style="margin-right: -12px"
-            class="search-btn"
-            size="large"
-            type="primary"
-          >
-            <a-icon type="environment" />
-          </a-button>
-        </a-input>
-      </a-auto-complete>
-    </div>
-    <!-- END: Autocomplete Form -->
-
+    <SearchForm @update="handleDataUpdate" />
+    <VenueList :venues="venues" :is-fetching="isFetching" :has-fetched="hasFetched" />
   </div>
 </template>
 
 <script>
-const dataSource = [
-  {
-    address: 'Sample Address 1',
-  },
-  {
-    address: 'Test Address 2',
-  }
-]
+import SearchForm from '@components/SearchForm';
+import VenueList from '@components/VenueList';
 
 export default {
   name: 'Home',
-  data: () => {
+  components: {
+    SearchForm,
+    VenueList
+  },
+  data() {
     return {
-      dataSource
+      venues: [],
+      isFetching: false,
+      hasFetched: false,
     }
   },
   methods: {
-    onSearch: (value) => {
-      console.log(value);
-    },
-
-    onSelect: (value) => {
-      console.log(value);
+    handleDataUpdate(data) {
+      for (let i in data) {
+        this[i] = data[i];
+      }
     }
   }
 }
 </script>
 
 <style lang="scss">
-  .page-home {
-    .loc-autocomplete {
-      text-align: center;
-
-      .ant-select-auto-complete {
-        display: block;
-        margin: 50px auto 20px;
-        width: 60%;
-      }
-
-      .ant-input-suffix button {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-    }
-  }
+  .page-home {}
 </style>

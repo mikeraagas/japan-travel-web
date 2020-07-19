@@ -1,6 +1,6 @@
 <template>
   <a-layout-footer class="layout-footer">
-      Biz Weather ©2020
+      Japan Travel ©2020
   </a-layout-footer>
 </template>
 

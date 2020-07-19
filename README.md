@@ -1,4 +1,4 @@
-# weather-app-web
+# japan-travel-web
 
 ## Project setup
 ```
