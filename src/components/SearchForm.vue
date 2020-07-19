@@ -81,7 +81,10 @@ export default {
   },
   methods: {
     async onSearch() {
-      this.$emit('update', { isFetching: true });
+      this.$emit('update', {
+        isFetching: true,
+        near: this.near,
+      });
 
       try {
         const res = await axios.get(`${process.env.VUE_APP_API_URL}/location/search`, {
@@ -98,8 +101,6 @@ export default {
           isFetching: false,
           hasFetched: true
         });
-
-        console.log(result);
       } catch (e) {
         console.log(e);
       }
@@ -127,7 +128,7 @@ export default {
     .search-input {
       display: block;
       margin: 30px auto 20px;
-      width: 60%;
+      width: 80%;
     }
   }
 </style>

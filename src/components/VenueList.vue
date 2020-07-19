@@ -2,7 +2,6 @@
   <div class="venue-list">
     <a-list
       v-show="hasFetched || isFetching"
-      class="venue-list"
       item-layout="vertical"
       :loading="isFetching"
       :data-source="venues">
@@ -27,7 +26,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'VenueList',
   data() {
     return {
     }
@@ -45,8 +44,11 @@ export default {
 <style lang="scss">
   .venue-list {
     margin-top: 30px;
-    min-height: 300px;
     padding: 0 20px;
+
+    .ant-list {
+      min-height: 300px;
+    }
 
     .ant-spin {
       margin-top: 50px;
