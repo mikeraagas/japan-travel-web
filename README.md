@@ -22,13 +22,15 @@ npm run lint
 
 ### Explanation on UI/UX Implementation
 This travel information app uses vue.js best practices
-    * Vue Routing
-    * Antd Vue UI Framework
-    * SCSS
-    * Modular components
+
+* Vue Routing
+* Antd Vue UI Framework
+* SCSS
+* Modular components
 
 Laravel is used for backend api
-    * Api Routing
-    * Api Integrations
-        * Foursquare API Integration
-        * Open Weather Map API Integration
+
+* Api Routing
+* Api Integrations
+    * Foursquare API Integration
+    * Open Weather Map API Integration
