@@ -31,9 +31,12 @@
           :key="index"
           :tab="(index === 0) ? 'Today' : (index === 1) ? 'Tomorrow' : 'After'">
           
-          <a-list :grid="{ gutter: 16, column: 3 }" :data-source="entries">
-            <a-list-item slot="renderItem" slot-scope="entry">
-              <a-card class="forecast-tpl">
+          <a-list
+            class="forecast-list"
+            :grid="{ gutter: 16, column: 3 }"
+            :data-source="entries">
+            <a-list-item class="forecast-tpl" slot="renderItem" slot-scope="entry">
+              <a-card>
                 <div class="f-time">
                   {{ entry.time }}
                 </div>
@@ -242,12 +245,19 @@ export default {
         text-align: center;
       }
 
-      .forecast-tpl {
-        text-align: center;
+      .forecast-list {
+        .ant-row {
+          display: flex;
+          justify-content: center;
+        }
 
-        .w-icon {
-          font-size: 30px;
-          margin: 20px 0;
+        .forecast-tpl {
+          text-align: center;
+
+          .w-icon {
+            font-size: 30px;
+            margin: 20px 0;
+          }
         }
       }
     }
