@@ -1,6 +1,6 @@
 <template>
   <div class="venue-list">
-    <div class="result-info" v-show="(hasFetched || isFetching) && venues">
+    <div class="result-info" v-show="hasFetched && venues">
       Top 5 results for <b>{{ q }}</b> in <b>{{ near }}</b>
     </div>
 
