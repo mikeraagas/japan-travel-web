@@ -20,5 +20,15 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Explanation on UI/UX Implementation
+This travel information app uses vue.js best practices
+    * Vue Routing
+    * Antd Vue UI Framework
+    * SCSS
+    * Modular components
+
+Laravel is used for backend api
+    * Api Routing
+    * Api Integrations
+        * Foursquare API Integration
+        * Open Weather Map API Integration
