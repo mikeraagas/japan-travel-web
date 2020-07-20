@@ -84,6 +84,7 @@ export default {
       this.$emit('update', {
         isFetching: true,
         near: this.near,
+        q: this.q
       });
 
       try {

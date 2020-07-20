@@ -6,6 +6,8 @@
           @update="handleDataUpdate" />
         
         <VenueList
+          :q="q"
+          :near="near"
           :venues="venues"
           :is-fetching="isFetching"
           :has-fetched="hasFetched" />
@@ -33,6 +35,7 @@ export default {
   },
   data() {
     return {
+      q: '',
       near: 'Tokyo,Jp',
       venues: [],
       isFetching: false,

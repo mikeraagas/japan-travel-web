@@ -1,5 +1,9 @@
 <template>
   <div class="venue-list">
+    <div class="result-info" v-show="(hasFetched || isFetching) && venues">
+      Top 5 results for <b>{{ q }}</b> in <b>{{ near }}</b>
+    </div>
+
     <a-list
       v-show="hasFetched || isFetching"
       item-layout="vertical"
@@ -32,6 +36,8 @@ export default {
     }
   },
   props: [
+    'q',
+    'near',
     'venues',
     'isFetching',
     'hasFetched'
@@ -45,6 +51,15 @@ export default {
   .venue-list {
     margin-top: 30px;
     padding: 0 20px;
+
+    .result-info {
+      font-style: italic;
+      margin-bottom: 20px;
+
+      b {
+        text-transform: capitalize;
+      }
+    }
 
     .ant-list {
       min-height: 300px;
